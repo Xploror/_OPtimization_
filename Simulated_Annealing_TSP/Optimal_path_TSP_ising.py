@@ -5,8 +5,6 @@ Created on Sun Feb 26 12:32:17 2023
 @author: surya
 """
 
-# ChatGPT constructed TSP problem using Ising model
-
 #### Change this code --> apply logic for combination of dest changes as well as interaction matrix variation ---> decide what variable will you take as spins
 
 import numpy as np
