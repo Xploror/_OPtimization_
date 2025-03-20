@@ -1,3 +1,21 @@
+## Implementation
+`Inputs as set of cartesian coordinates and number of annealing iteration` are fed to the algorithm where initially a distance matrix is calculated which is used to create an ising model that for this specific case considers distance as a metric for the ising interactions. After both the state matrix and the ising model is computed, these are used to simulate annealing to find optimal spin configuration using random sampling and continually updating the spin state matrix with each iteration to update the links. (Analogous to the Ising model implementation on electron spin configuration to achieve min energy possible)
+
+## Functions
+#### $$\color{green}{create\ distance\ matrix()}$$ - Inputs the list of 2D cartesian coordinates representing every point (can be extrapolated to 3D scenarios)
+#### $$\color{green}{create\ ising\ model()}$$ - Inputs the the distance matrix for the entire graph and setups the initial ising model, state matrix and node vector to establish links and metrics.
+#### $$\color{green}{update\ spin\ mat()}$$ - Inputs the node vector and the computed swap pair to update the node vector by diligently swapping the points. After the swaps the satte matrix is recomputed and th eresults reflect an update on the state matrix.
+#### $$\color{green}{simulate\ annealing()}$$ - The simulated annealing iterative process is implemented in this function that inputs the ising model, initial state matrix, the node vector and the number of iterations. The `update_spin_mat()` is called within this function for each iteration and at each (time) epoch and an analogous energy is calculated for the whole system that tracks the minimum energy with each iteration.
+#### $$\color{green}{find\ shortest\ path()}$$ - Main function that chronologically calls other functionalities.
+<br>
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/user-attachments/assets/4f655d15-c916-4e08-a29d-bcbba89a1881">
+</p>
+<p align="center">
+  Temporal visualization of the optimization
+</p>
+
 ## Example Results:
 
 ### CASE-1: Uneven distribution
